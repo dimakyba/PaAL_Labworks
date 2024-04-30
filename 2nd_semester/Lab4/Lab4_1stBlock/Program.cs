@@ -15,39 +15,12 @@ struct MyTime
   {
     return $"{hour}:{minute:D2}:{second:D2}";
   }
-
-
 }
 
 class Program
 {
   static void Main(string[] args)
   {
-
-    // System.Console.WriteLine("Перевірка методу ToSecSinceMidnight:");
-    // MyTime time1 = new MyTime(8, 0, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(9, 20, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(9, 40, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(11, 0, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(11, 20, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(12, 40, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(13, 00, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(14, 20, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(14, 20, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(14, 40, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-    // time1 = new MyTime(16, 00, 0);
-    // System.Console.WriteLine(ToSecSinceMidnight(time1));
-
     System.Console.WriteLine("Перевірка методу ToSecSinceMidnight:");
     MyTime time1 = new MyTime(10, 30, 15);
     MyTime time2 = new MyTime(5, 45, 20);
@@ -58,7 +31,7 @@ class Program
     System.Console.WriteLine("Перевірка методу FromSecSinceMidnight:");
     int totalSeconds = 30000; // 8:20:00
     MyTime fromSeconds = FromSecSinceMidnight(totalSeconds);
-    Console.WriteLine($"Перевівши час з опівночі з секунд у формат годинника, отримуємо {fromSeconds}");
+    Console.WriteLine($"Перевівши час з опівночі з {totalSeconds} секунд у формат годинника, отримуємо {fromSeconds}");
     System.Console.WriteLine();
 
     System.Console.WriteLine("Перевірка методу AddOneSecond:");
@@ -145,7 +118,6 @@ class Program
     return t.hour * 3600 + t.minute * 60 + t.second;
   }
 
-
   static MyTime FromSecSinceMidnight(int t)
   {
     const int secPerDay = 60 * 60 * 24;
@@ -164,15 +136,14 @@ class Program
     return AddSeconds(t, 1);
   }
 
-
   static MyTime AddOneMinute(MyTime t)
   {
     t.minute++;
-    if (t.minute >= 60)
+    if (t.minute == 60)
     {
       t.minute = 0;
       t.hour++;
-      if (t.hour >= 24)
+      if (t.hour == 24)
       {
         t.hour = 0;
       }
@@ -184,7 +155,7 @@ class Program
   static MyTime AddOneHour(MyTime t)
   {
     t.hour++;
-    if (t.hour >= 24)
+    if (t.hour == 24)
     {
       t.hour = 0;
     }
@@ -221,11 +192,15 @@ class Program
   {
     if (start.hour <= finish.hour)
     {
-      if (t.hour > start.hour && t.hour < finish.hour) return true;
-      if (t.hour == start.hour && t.minute > start.minute) return true;
-      if (t.hour == start.hour && t.minute == start.minute && t.second >= start.second) return true;
-      if (t.hour == finish.hour && t.minute < finish.minute) return true;
-      if (t.hour == finish.hour && t.minute == finish.minute && t.second < finish.second) return true;
+      if ((t.hour > start.hour && t.hour < finish.hour) ||
+          (t.hour == start.hour && t.minute > start.minute) ||
+          (t.hour == start.hour && t.minute == start.minute && t.second >= start.second) ||
+          (t.hour == finish.hour && t.minute < finish.minute) ||
+          (t.hour == finish.hour && t.minute == finish.minute && t.second < finish.second))
+      {
+        return true;
+      }
+
     }
     else
     {
