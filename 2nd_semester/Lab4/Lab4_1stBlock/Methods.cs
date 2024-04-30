@@ -79,30 +79,16 @@ namespace Lab4
 
     static bool IsInRange(MyTime start, MyTime finish, MyTime t)
     {
-      if (start.hour <= finish.hour)
+      int startSec = ToSecSinceMidnight(start);
+      int finishSec = ToSecSinceMidnight(finish);
+      int currentSec = ToSecSinceMidnight(t);
+      if (finishSec < startSec)
       {
-        if ((t.hour > start.hour && t.hour < finish.hour) ||
-            (t.hour == start.hour && t.minute > start.minute) ||
-            (t.hour == start.hour && t.minute == start.minute && t.second >= start.second) ||
-            (t.hour == finish.hour && t.minute < finish.minute) ||
-            (t.hour == finish.hour && t.minute == finish.minute && t.second < finish.second))
-        {
-          return true;
-        }
+        finishSec += 24 * 60 * 60;
+      }
 
-      }
-      else
-      {
-        if ((t.hour > start.hour || t.hour < finish.hour) ||
-            (t.hour == finish.hour && t.minute < finish.minute) ||
-            (t.hour == finish.hour && t.minute == finish.minute && t.second < finish.second) ||
-            (t.hour == start.hour && t.minute > start.minute) ||
-            (t.hour == start.hour && t.minute == start.minute && t.second >= start.second))
-        {
-          return true;
-        }
-      }
-      return false;
+      return currentSec >= startSec && currentSec < finishSec;
+
     }
 
     static string WhatLesson(MyTime mt)
