@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab5\\Lab5.csproj": {}
+    "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab5\\Lab5.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab5\\Lab5.csproj": {
+    "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab5\\Lab5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab5\\Lab5.csproj",
+        "projectUniqueName": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab5\\Lab5.csproj",
         "projectName": "Lab5",
-        "projectPath": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab5\\Lab5.csproj",
+        "projectPath": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab5\\Lab5.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab5\\obj\\",
+        "outputPath": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab5\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
