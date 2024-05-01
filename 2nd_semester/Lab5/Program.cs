@@ -170,16 +170,8 @@ namespace Lab5
             default:
               System.Console.WriteLine();
               break;
-
-
           }
         }
-
-
-
-
-
-
       } while (choice != 0);
     }
   }
