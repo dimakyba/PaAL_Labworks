@@ -1,3 +1,9 @@
 [submodule "2nd_semester/Lab3_PaAL"]
 	path = 2nd_semester/Lab3_PaAL
 	url = https://github.com/dimakyba/Lab3_PaAL
+[submodule "2nd_semester/Lab4/lab4"]
+	path = 2nd_semester/Lab4/lab4
+	url = https://github.com/flovnes/lab4
+[submodule "2nd_semester/Lab5/Lab5_2nd_sem"]
+	path = 2nd_semester/Lab5/Lab5_2nd_sem
+	url = https://github.com/dimakyba/Lab5_2nd_sem
