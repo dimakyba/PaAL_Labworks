@@ -13,19 +13,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab4_1stBlock\\Lab4_1stBlock.csproj",
+      "projectUniqueName": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab4_1stBlock\\Lab4_1stBlock.csproj",
       "projectName": "Lab4_1stBlock",
-      "projectPath": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab4_1stBlock\\Lab4_1stBlock.csproj",
+      "projectPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab4_1stBlock\\Lab4_1stBlock.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Desktop\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab4_1stBlock\\obj\\",
+      "outputPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab4\\Lab4_1stBlock\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

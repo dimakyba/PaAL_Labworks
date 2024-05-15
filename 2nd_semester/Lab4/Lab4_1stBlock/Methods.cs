@@ -54,11 +54,17 @@ namespace Lab4
 
     static MyTime AddSeconds(MyTime t, int s)
     {
+      const int secondsInDay = 24 * 60 * 60;
       int totalSeconds = t.hour * 3600 + t.minute * 60 + t.second;
-
       totalSeconds += s;
 
-      int newHour = totalSeconds / 3600 % 24;
+      totalSeconds = totalSeconds % secondsInDay;
+
+      if (totalSeconds < 0)
+      {
+        totalSeconds = secondsInDay + totalSeconds;
+      }
+      int newHour = totalSeconds / 3600;
       int newMinute = totalSeconds % 3600 / 60;
       int newSecond = totalSeconds % 60;
 
@@ -84,7 +90,7 @@ namespace Lab4
       int currentSec = ToSecSinceMidnight(t);
       if (finishSec < startSec)
       {
-        finishSec += 24 * 60 * 60;
+        startSec -= 24 * 60 * 60;
       }
 
       return currentSec >= startSec && currentSec < finishSec;
