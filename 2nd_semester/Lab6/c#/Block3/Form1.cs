@@ -1,6 +1,6 @@
 using System.Drawing.Drawing2D;
 
-namespace Block2
+namespace Block3
 {
     public partial class Form1 : Form
     {
@@ -18,11 +18,13 @@ namespace Block2
             centerX = this.ClientSize.Width / 2;
             centerY = this.ClientSize.Height / 2;
             timer1.Start();
+
+            // this.DoubleBuffered = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            angle += 0.05;
+            angle += 0.1;
 
             x1 = centerX + orbitRadius1 * Math.Cos(angle);
             y1 = centerY + orbitRadius1 * Math.Sin(angle);
@@ -34,11 +36,13 @@ namespace Block2
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = CreateGraphics();
-            DrawFilledCircle(g, centerX, centerY, dotRadius, Color.Black);
+            DrawFilledCircle(e.Graphics, (int)x2, (int)y2, dotRadius, Color.Green);
+            DrawFilledCircle(e.Graphics, (int)x1, (int)y1, dotRadius, Color.Blue);
 
-            DrawFilledCircle(g, (int)x1, (int)y1, dotRadius, Color.Blue);
-            DrawFilledCircle(g, (int)x2, (int)y2, dotRadius, Color.Yellow);
+            DrawFilledCircle(e.Graphics, centerX, centerY, dotRadius, Color.Black);
+            // DrawFilledCircle(e.Graphics, 0, 0, 25, Color.White);
+
+
         }
 
         private void DrawFilledCircle(Graphics g, int x, int y, int radius, Color color)

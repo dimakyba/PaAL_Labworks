@@ -1,0 +1,17 @@
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\bin\Debug\net8.0-windows\Block3.exe
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\bin\Debug\net8.0-windows\Block3.deps.json
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\bin\Debug\net8.0-windows\Block3.runtimeconfig.json
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\bin\Debug\net8.0-windows\Block3.dll
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\bin\Debug\net8.0-windows\Block3.pdb
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.Form1.resources
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.csproj.GenerateResource.cache
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.AssemblyInfoInputs.cache
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.AssemblyInfo.cs
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.csproj.CoreCompileInputs.cache
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.sourcelink.json
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.dll
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\refint\Block3.dll
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.pdb
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\Block3.genruntimeconfig.cache
+D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block3\obj\Debug\net8.0-windows\ref\Block3.dll

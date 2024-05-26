@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\Block2\\Block2.csproj": {}
+    "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block2\\Block2.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\Block2\\Block2.csproj": {
+    "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block2\\Block2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\Block2\\Block2.csproj",
+        "projectUniqueName": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block2\\Block2.csproj",
         "projectName": "Block2",
-        "projectPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\Block2\\Block2.csproj",
+        "projectPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block2\\Block2.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\Block2\\obj\\",
+        "outputPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

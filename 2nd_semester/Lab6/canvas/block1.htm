@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Block1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="touch_some_grass">
+    <h1>shapes</h1>
+    <canvas id="block" width="640" height="480"></canvas>
+  </div>
+
+  <div class="btns">
+    <a href="index.htm">
+      <button>go back</button>
+    </a>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("block");
+
+    const gl = canvas.getContext("2d");
+
+    let centerX = 100;
+    let centerY = 100;
+    let radius = 50;
+    let startAngle = 0;
+    let endAngle = Math.PI;
+
+    gl.beginPath();
+    gl.arc(centerX, centerY, radius, startAngle, endAngle);
+    gl.strokeStyle = 'black';
+    gl.lineWidth = 3;
+    gl.stroke();
+
+
+    let points = [
+      { x: 450, y: 200 },
+      { x: 550, y: 250 },
+      { x: 500, y: 350 },
+      { x: 400, y: 300 }
+    ];
+
+    gl.beginPath();
+    gl.moveTo(points[0].x, points[0].y);
+    for (let i = 1; i < points.length; i++) {
+      gl.lineTo(points[i].x, points[i].y);
+    }
+    gl.closePath();
+
+    gl.strokeStyle = 'black';
+    gl.lineWidth = 3;
+    gl.stroke();
+
+    centerX = 200;
+    centerY = 315;
+    radius = 75;
+    startAngle = 5
+    endAngle = startAngle + Math.PI * 4 / 3;
+
+    gl.beginPath();
+    gl.moveTo(centerX, centerY);
+    gl.arc(centerX, centerY, radius, startAngle, endAngle);
+    gl.closePath();
+
+    gl.fillStyle = 'aqua';
+    gl.fill();
+
+  </script>
+</body>
+
+</html>

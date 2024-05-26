@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Block2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="touch_some_grass">
+    <h1>fish)</h1>
+    <canvas id="block" width="640" height="480"></canvas>
+  </div>
+
+  <div class="btns">
+    <a href="index.htm">
+      <button>go back</button>
+    </a>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("block")
+
+    const gl = canvas.getContext("2d")
+
+    let x = 150
+    let y = 200
+    let width = 300
+    let height = 150
+
+    gl.beginPath()
+    gl.ellipse(x + width / 2, y + height / 2, width / 2, height / 2, 0, 0, 2 * Math.PI)
+    gl.fillStyle = 'lightblue'
+    gl.fill()
+
+    let tailPoints = [
+      { x: 450, y: 275 },
+      { x: 550, y: 200 },
+      { x: 550, y: 350 }
+    ]
+    gl.beginPath()
+    gl.moveTo(tailPoints[0].x, tailPoints[0].y)
+
+    for (let i = 1; i < tailPoints.length; i++) {
+      gl.lineTo(tailPoints[i].x, tailPoints[i].y)
+    }
+    gl.fillStyle = 'lightblue'
+    gl.fill()
+    gl.closePath()
+
+
+    let centerX = 220
+    let centerY = 240
+    let radius = 20
+
+    gl.beginPath()
+    gl.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
+    gl.fillStyle = 'white'
+    gl.fill()
+    gl.closePath()
+
+    radius = 8
+    gl.beginPath()
+    gl.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
+    gl.fillStyle = 'black'
+    gl.fill()
+    gl.closePath()
+
+    let topFinPoints = [
+      { x: 250, y: 200 },
+      { x: 300, y: 100 },
+      { x: 350, y: 200 }
+    ]
+
+    gl.beginPath()
+    gl.moveTo(topFinPoints[0].x, topFinPoints[0].y)
+    for (let i = 1; i < topFinPoints.length; i++) {
+      gl.lineTo(topFinPoints[i].x, topFinPoints[i].y)
+    }
+    gl.fillStyle = 'lightblue'
+    gl.fill()
+    gl.closePath()
+
+    let bottomFinPoints = [
+      { x: 250, y: 350 },
+      { x: 300, y: 450 },
+      { x: 350, y: 350 }
+    ]
+
+    gl.beginPath()
+    gl.moveTo(bottomFinPoints[0].x, bottomFinPoints[0].y)
+    for (let i = 1; i < bottomFinPoints.length; i++) {
+      gl.lineTo(bottomFinPoints[i].x, bottomFinPoints[i].y)
+    }
+    gl.fillStyle = 'lightblue'
+    gl.fill()
+    gl.closePath()
+
+
+  </script>
+</body>
+
+</html>

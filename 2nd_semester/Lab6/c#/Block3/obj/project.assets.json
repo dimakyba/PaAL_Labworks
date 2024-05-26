@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block3\\Block2.csproj",
-      "projectName": "Block2",
-      "projectPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block3\\Block2.csproj",
+      "projectUniqueName": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block3\\Block3.csproj",
+      "projectName": "Block3",
+      "projectPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block3\\Block3.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "D:\\Desktop\\uni\\PaAL_Labworks\\2nd_semester\\Lab6\\c#\\Block3\\obj\\",
       "projectStyle": "PackageReference",

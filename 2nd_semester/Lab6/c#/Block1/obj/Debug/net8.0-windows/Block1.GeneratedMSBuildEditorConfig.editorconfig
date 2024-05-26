@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Block1
-build_property.ProjectDir = D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\Block1\
+build_property.ProjectDir = D:\Desktop\uni\PaAL_Labworks\2nd_semester\Lab6\c#\Block1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

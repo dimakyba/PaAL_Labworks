@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Block3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="touch_some_grass">
+    <h1>spinning dots</h1>
+    <canvas id="block" width="640" height="480"></canvas>
+  </div>
+
+  <div class="btns">
+    <a href="index.htm">
+      <button>go back</button>
+    </a>
+  </div>
+  <script>
+    const canvas = document.getElementById("block")
+    const gl = canvas.getContext("2d")
+
+    function drawSpinningCircles() {
+      const now = new Date()
+      gl.save()
+      gl.clearRect(0, 0, 640, 480)
+      gl.translate(320, 240)
+      gl.save()
+      gl.restore()
+
+      gl.fillStyle = "black"
+      gl.beginPath()
+      gl.arc(0, 0, 15, 0, Math.PI * 2)
+      gl.fill()
+
+      const dotAngle1 = now.getTime() / 400
+      const dotRadius = 80
+      const dot1X = Math.cos(dotAngle1) * dotRadius
+      const dot1Y = Math.sin(dotAngle1) * dotRadius
+      const dot2X = Math.cos(-dotAngle1) * dotRadius * 2
+      const dot2Y = Math.sin(-dotAngle1) * dotRadius * 2
+
+      gl.fillStyle = "#47CCAB"
+      gl.beginPath()
+      gl.arc(dot1X, dot1Y, 15, 0, Math.PI * 2)
+      gl.fill()
+
+      gl.fillStyle = "#F5ED11"
+      gl.beginPath()
+      gl.arc(dot2X, dot2Y, 15, 0, Math.PI * 2)
+      gl.fill()
+
+
+
+      gl.restore()
+
+      window.requestAnimationFrame(drawSpinningCircles)
+    }
+
+    window.requestAnimationFrame(drawSpinningCircles)
+
+  </script>
+
+</body>
+
+</html>

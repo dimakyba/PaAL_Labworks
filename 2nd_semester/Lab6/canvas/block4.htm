@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Block4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="touch_some_grass">
+    <h1>press Z to bomb russians</h1>
+    <canvas id="block" width="640" height="480"></canvas>
+  </div>
+
+  <div class="btns">
+    <a href="index.htm">
+      <button>go back</button>
+    </a>
+  </div>
+  <script>
+    const canvas = document.getElementById('block')
+    const gl = canvas.getContext('2d')
+
+    const radius = 20
+    const gravity = 1
+    const initialVelocityX = 2
+    let x, y, velocityX, velocityY
+    let isAnimating = false
+
+    const rectX = (canvas.width) / 2 - 100
+    const rectY = (canvas.height) / 2 - 100
+    const fallingPoint = canvas.height * 0.9
+
+    let bombImage = new Image()
+    let explosionImage = new Image()
+    bombImage.src = "/assets/bomb.png"
+    explosionImage.src = "/assets/boom2.png"
+
+    function initializeBomb() {
+      x = canvas.width / 2
+      y = canvas.height / 2 + 40
+      velocityX = initialVelocityX
+      velocityY = 0
+    }
+
+    function drawPlane() {
+      let boeing = new Image()
+      boeing.src = "/assets/combat_plane.png"
+      let smoke = new Image()
+
+      smoke.src = "/assets/smoke.png"
+      boeing.onload = function () {
+        gl.drawImage(smoke, -50, rectY)
+        gl.drawImage(boeing, rectX, rectY)
+      }
+
+      gl.drawImage(smoke, -50, rectY)
+      gl.drawImage(boeing, rectX, rectY)
+    }
+
+    function drawBomb() {
+      gl.drawImage(bombImage, x - radius, y - radius, radius * 2, radius * 2)
+    }
+
+    function drawExplosion() {
+      gl.drawImage(explosionImage, x - radius, y - radius, radius * 2, radius * 3)
+    }
+
+    function drawSky() {
+      gl.fillStyle = '#47CCAB'
+      gl.fillRect(0, 0, canvas.width, canvas.height * 0.75)
+    }
+
+
+    function drawSun() {
+      gl.fillStyle = "#F5ED11"
+      gl.beginPath()
+      gl.arc(490, 0, 55, 0, Math.PI * 2)
+      gl.fill()
+    }
+
+    function drawGround() {
+      gl.fillStyle = '#2C8533'
+      gl.fillRect(0, canvas.height, canvas.width, -canvas.height * 0.25)
+    }
+
+    function update() {
+      if (y + radius < fallingPoint) {
+        velocityY += gravity
+        x += velocityX * 3
+        y += velocityY
+      } else if (x + radius > 0) {
+        y = fallingPoint - radius
+        velocityY = 0
+        velocityX = -10
+        x += velocityX
+      } else {
+        isAnimating = false
+        return
+      }
+      gl.clearRect(0, 0, canvas.width, canvas.height)
+      drawGround()
+      drawSky()
+      drawSun()
+      drawPlane()
+      if (y + radius < fallingPoint) {
+        drawBomb()
+      } else {
+        drawExplosion()
+      }
+
+      requestAnimationFrame(update)
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if ((event.key === 'z' || event.key === 'Z' || event.key === 'я' || event.key === 'Я') && !isAnimating) {
+        isAnimating = true
+        initializeBomb()
+        update()
+      }
+    })
+
+    initializeBomb()
+    gl.clearRect(0, 0, canvas.width, canvas.height)
+    drawGround()
+    drawSky()
+    drawSun()
+    drawPlane()
+    drawSmoke()
+  </script>
+</body>
+
+</html>
