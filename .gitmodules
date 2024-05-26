@@ -7,3 +7,6 @@
 [submodule "2nd_semester/Lab5/Lab5_2nd_sem"]
 	path = 2nd_semester/Lab5/Lab5_2nd_sem
 	url = https://github.com/dimakyba/Lab5_2nd_sem
+[submodule "2nd_semester/Lab6/lab6_canvas"]
+	path = 2nd_semester/Lab6/lab6_canvas
+	url = https://github.com/dimakyba/lab6_canvas
