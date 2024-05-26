@@ -6,7 +6,8 @@ namespace Block4
 {
   public partial class Form1 : Form
   {
-    private System.Windows.Forms.Timer timer;
+    private System.Windows.Forms.Timer bombTimer;
+    private System.Windows.Forms.Timer cloudTimer;
     private float x, y, velocityX, velocityY;
     private bool isAnimating = false;
 
@@ -16,6 +17,11 @@ namespace Block4
     private float planeX;
     private float planeY;
     private float fallingPoint;
+
+    private float cloudX;
+    private float cloudY = 80; // Adjust this to change the height of the cloud
+    private const float cloudSpeed = 1;
+    private Bitmap cloudImage;
 
     private Bitmap bombImage;
     private Bitmap explosionImage;
@@ -30,9 +36,14 @@ namespace Block4
       this.Paint += new PaintEventHandler(OnPaint);
       this.KeyDown += new KeyEventHandler(OnKeyDown);
 
-      timer = new System.Windows.Forms.Timer();
-      timer.Interval = 16; // Approximately 60 FPS
-      timer.Tick += new EventHandler(OnTimerTick);
+      bombTimer = new System.Windows.Forms.Timer();
+      bombTimer.Interval = 16; // Approximately 60 FPS
+      bombTimer.Tick += new EventHandler(OnBombTimerTick);
+
+      cloudTimer = new System.Windows.Forms.Timer();
+      cloudTimer.Interval = 16; // Approximately 60 FPS
+      cloudTimer.Tick += new EventHandler(OnCloudTimerTick);
+      cloudTimer.Start();
 
       this.Load += new EventHandler(Form1_Load);
 
@@ -40,6 +51,7 @@ namespace Block4
       explosionImage = new Bitmap("assets/boom2.png");
       planeImage = new Bitmap("assets/combat_plane.png");
       smokeImage = new Bitmap("assets/smoke.png");
+      cloudImage = new Bitmap("assets/cloud.png");
     }
 
     private void Form1_Load(object sender, EventArgs e)
@@ -47,6 +59,7 @@ namespace Block4
       planeX = (this.ClientSize.Width) / 2 - 100;
       planeY = (this.ClientSize.Height) / 2 - 150;
       fallingPoint = this.ClientSize.Height * 0.9f;
+      cloudX = this.ClientSize.Width;
     }
 
     private void InitializeBomb()
@@ -57,13 +70,19 @@ namespace Block4
       velocityY = 0;
     }
 
-    private void OnTimerTick(object sender, EventArgs e)
+    private void OnBombTimerTick(object sender, EventArgs e)
     {
-      UpdateAnimation();
+      UpdateBombAnimation();
       this.Invalidate();
     }
 
-    private void UpdateAnimation()
+    private void OnCloudTimerTick(object sender, EventArgs e)
+    {
+      UpdateCloudAnimation();
+      this.Invalidate();
+    }
+
+    private void UpdateBombAnimation()
     {
       if (y + radius < fallingPoint)
       {
@@ -81,7 +100,16 @@ namespace Block4
       else
       {
         isAnimating = false;
-        timer.Stop();
+        bombTimer.Stop();
+      }
+    }
+
+    private void UpdateCloudAnimation()
+    {
+      cloudX -= cloudSpeed;
+      if (cloudX + cloudImage.Width < 0)
+      {
+        cloudX = this.ClientSize.Width;
       }
     }
 
@@ -94,6 +122,7 @@ namespace Block4
       DrawSky(g);
       DrawGround(g);
       DrawSun(g);
+      DrawCloud(g);
       DrawPlane(g);
 
       if (isAnimating)
@@ -139,6 +168,10 @@ namespace Block4
       g.DrawImage(planeImage, planeX, planeY);
     }
 
+    private void DrawCloud(Graphics g)
+    {
+      g.DrawImage(cloudImage, cloudX, cloudY);
+    }
 
     private void DrawBomb(Graphics g)
     {
@@ -156,7 +189,7 @@ namespace Block4
       {
         isAnimating = true;
         InitializeBomb();
-        timer.Start();
+        bombTimer.Start();
       }
     }
   }

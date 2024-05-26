@@ -35,8 +35,8 @@
 
     let bombImage = new Image()
     let explosionImage = new Image()
-    bombImage.src = "/assets/bomb.png"
-    explosionImage.src = "/assets/boom2.png"
+    bombImage.src = "./assets/bomb.png"
+    explosionImage.src = "./assets/boom2.png"
 
     function initializeBomb() {
       x = canvas.width / 2
@@ -47,10 +47,10 @@
 
     function drawPlane() {
       let boeing = new Image()
-      boeing.src = "/assets/combat_plane.png"
+      boeing.src = "./assets/combat_plane.png"
       let smoke = new Image()
 
-      smoke.src = "/assets/smoke.png"
+      smoke.src = "./assets/smoke.png"
       boeing.onload = function () {
         gl.drawImage(smoke, -50, rectY)
         gl.drawImage(boeing, rectX, rectY)
